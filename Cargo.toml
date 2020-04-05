@@ -1,9 +1,13 @@
 [package]
 name = "ddir"
+description = "a tool to find files by date/time/datetime"
+license = "MIT"
 version = "0.0.1"
 authors = ["Frankie Bagnardi <f.bagnardi@gmail.com>"]
 edition = "2018"
+include = ["src/**/*.rs", "Cargo.toml"]
 
 [dependencies]
 nom = "5"
 chrono = "0.4"
+
