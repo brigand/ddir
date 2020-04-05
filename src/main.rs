@@ -54,6 +54,23 @@ fn main() {
                 println!("date: {}, name: {}", item.date, item.name);
             }
         }
+        "asc" => {
+            let mut list = get_listing();
+            list.sort();
+
+            for item in list {
+                println!("{}", item.name);
+            }
+        }
+        "desc" => {
+            let mut list = get_listing();
+            list.sort();
+            list.reverse();
+
+            for item in list {
+                println!("{}", item.name);
+            }
+        }
         "latest" => {
             let mut list = get_listing();
             list.sort();
@@ -69,8 +86,9 @@ fn main() {
             }
         }
         _ => {
-            eprintln!("Unknown command \"{}\".", cmd);
-            eprintln!("Try \"latest\" (default)");
+            eprintln!("Unknown subcommand \"{}\".", cmd);
+            eprintln!("Try \"latest\" (default), or asc, desc, debug");
+            std::process::exit(1);
         }
     }
 }
